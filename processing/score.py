@@ -3,9 +3,9 @@ contains functions to score the system'''
 
 import numpy as np
 import imp
-Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
-debug_here = Tracer()
-# from IPython.core.debugger import Tracer; debug_here = Tracer();
+# Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+# debug_here = Tracer()
+from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 def CER(nbests, references):
     '''

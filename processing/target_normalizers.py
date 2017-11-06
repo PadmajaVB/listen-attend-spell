@@ -1,10 +1,10 @@
 '''@file target_normalizers.py
 Contains functions for target normalization, this is database and task dependent
 '''
-# from IPython.core.debugger import Tracer; debug_here = Tracer();
-import imp
-Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
-Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+from IPython.core.debugger import Tracer; debug_here = Tracer();
+# import imp
+# Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+# Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
 
 def aurora4_normalizer(transcription, alphabet):
     '''

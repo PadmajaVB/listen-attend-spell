@@ -71,7 +71,6 @@ def read_wavfiles(filename):
                 - bool wheter or not the filename is extended (with a
                     read command)
     '''
-
     with open(filename) as fid:
         wavfiles = OrderedDict()
         for line in fid:

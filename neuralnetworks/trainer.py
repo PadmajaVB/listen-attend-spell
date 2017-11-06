@@ -5,15 +5,13 @@ from __future__ import print_function
 from abc import ABCMeta, abstractmethod
 import tensorflow as tf
 import numpy as np
+from classifiers import seq_convertors
+from IPython.core.debugger import Tracer; debug_here = Tracer();
+
+# import imp
+# Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+#from home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger import Tracer; debug_here = Tracer();
 from neuralnetworks.classifiers import seq_convertors
-import imp
-
-Tracer = imp.load_source('Tracer',
-						 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
-debug_here = Tracer();
-
-
-# from home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger import Tracer; debug_here = Tracer();
 
 class Trainer(object):
 	'''General class outlining the training environment of a classifier.'''
