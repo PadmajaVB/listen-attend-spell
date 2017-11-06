@@ -6,13 +6,20 @@ import tensorflow as tf
 import numpy as np
 from classifiers import seq_convertors
 import imp
-Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
-# from IPython.core.debugger import Tracer; debug_here = Tracer();
+
+# Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+
+
+from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 class Decoder(object):
     '''the abstract class for a decoder'''
 
     __metaclass__ = ABCMeta
+
+    # A metaclass is the class of a class. Like a class defines how an instance of the class behaves,
+    # a metaclass defines how a class behaves. A class is an instance of a metaclass.
+    # Refer metaclass.png in project folder
 
     def __init__(self, classifier, input_dim, max_input_length):
         '''
@@ -28,27 +35,29 @@ class Decoder(object):
         self.max_input_length = max_input_length
 
         with self.graph.as_default():
-
-            #create the inputs placeholder
+            # Create the inputs placeholder
+            # Placeholder : A placeholder is simply a variable that we will assign data to at a later date.
+            # It allows us to create our operations and build our computation graph, without needing the data.
+            # In TensorFlow terminology, we then feed data into the graph through these placeholders.
             self.inputs = tf.placeholder(
                 tf.float32, shape=[1, max_input_length, input_dim],
                 name='inputs')
 
-            #create the sequence length placeholder
+            # create the sequence length placeholder
             self.input_seq_length = tf.placeholder(
                 tf.int32, shape=[1], name='seq_length')
 
-            #create the decoding graph
+            # create the decoding graph
             logits, logits_seq_length, self.saver, _ = \
                 classifier(
                     self.inputs, self.input_seq_length, targets=None,
                     target_seq_length=None, is_training=False, decoding=True,
                     reuse=None, scope='Classifier')
 
-            #compute the outputs based on the classifier output logits
+            # compute the outputs based on the classifier output logits
             self.outputs = self.get_outputs(logits, logits_seq_length)
 
-        #specify that the graph can no longer be modified after this point
+        # specify that the graph can no longer be modified after this point
         self.graph.finalize()
 
     @abstractmethod
@@ -90,19 +99,24 @@ class Decoder(object):
             the output of the decoder
         '''
 
-        #get the sequence length
+        # get the sequence length
         input_seq_length = [inputs.shape[0]]
 
-        #pad the inputs
+        # pad the inputs
         inputs = np.append(
-            inputs, np.zeros([self.max_input_length-inputs.shape[0],
+            inputs, np.zeros([self.max_input_length - inputs.shape[0],
                               inputs.shape[1]]), 0)
 
-        #pylint: disable=E1101
+        # pylint: disable=E1101
         decoded = tf.get_default_session().run(
             self.outputs,
-            feed_dict={self.inputs:inputs[np.newaxis, :, :],
-                       self.input_seq_length:input_seq_length})
+            feed_dict={self.inputs: inputs[np.newaxis, :, :],
+                       self.input_seq_length: input_seq_length})
+
+        '''tf.get_default_session() -->
+        Returns the default session for the current thread.
+  The returned `Session` will be the innermost session on which a
+  `Session` or `Session.as_default()` context has been entered.'''
 
         decoded = self.process_decoded(decoded)
         return decoded
@@ -116,6 +130,7 @@ class Decoder(object):
         '''
 
         self.saver.restore(tf.get_default_session(), filename)
+
 
 class SimpleDecoder(Decoder):
     '''Simple decoder that passes the output logits through a softmax.'''
@@ -132,9 +147,14 @@ class SimpleDecoder(Decoder):
             An NxO tensor containing posterior distributions
         '''
 
-        #convert logits to non sequence for the softmax computation
+        # convert logits to non sequence for the softmax computation
         logits = seq_convertors.seq2nonseq(logits, logits_seq_length)
-
+        '''
+        softmax(logits, dim=-1, name=None):
+        Computes softmax activations.
+        For each batch `i` and class `j` we have
+        softmax = exp(logits) / reduce_sum(exp(logits), dim)
+        '''
         return tf.nn.softmax(logits)
 
     def process_decoded(self, decoded):
@@ -150,11 +170,12 @@ class SimpleDecoder(Decoder):
 
         return decoded
 
+
 class CTCDecoder(Decoder):
-    '''CTC Decoder'''
+    """CTC Decoder"""
 
     def __init__(self, classifier, input_dim, max_input_length, beam_width):
-        '''
+        """
         Decoder constructor, creates the decoding graph
 
         Args:
@@ -162,38 +183,38 @@ class CTCDecoder(Decoder):
             input_dim: the input dimension to the nnnetgraph
             max_input_length: the maximum length of the inputs
             beam_width: the width of the decoding beam
-        '''
+        """
 
-        #store the beam width
+        # store the beam width
         self.beam_width = beam_width
 
         super(CTCDecoder, self).__init__(classifier, input_dim,
                                          max_input_length)
 
     def get_outputs(self, logits, logits_seq_length):
-        '''
+        """
         get the outputs with ctc beam search
 
         Args:
             logits: A list containing a 1xO tensor for each timestep where O
-                is the classifier output dimension
+                is the classifier output dimension      ?????????????????????????????????????
             logits_seq_length: the logits sequence length
 
         Returns:
-            a pair containg:
+            a pair containing:
                 - a tuple of length W containing vectors with output sequences
                 - a W dimensional vector containing the log probabilities
-        '''
+        """
 
-        #Convert logits to time major
+        # Convert logits to time major
         logits = tf.pack(tf.unpack(logits, axis=1))
 
-        #do the CTC beam search
+        # do the CTC beam search
         sparse_outputs, logprobs = tf.nn.ctc_beam_search_decoder(
             tf.pack(logits), logits_seq_length, self.beam_width,
             self.beam_width)
 
-        #convert the outputs to dense tensors
+        # convert the outputs to dense tensors
         dense_outputs = [
             tf.reshape(tf.sparse_tensor_to_dense(o), [-1])
             for o in sparse_outputs]
@@ -249,5 +270,5 @@ class SimpleSeqDecoder(Decoder):
             the outputs of the decoding graph
         '''
         logits, seq_length = decoded
-        #debug_here()
+        # debug_here()
         return logits[:seq_length], seq_length
