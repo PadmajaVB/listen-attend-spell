@@ -114,7 +114,7 @@ class BLSTMLayer(object):
                 lstm_cell, lstm_cell, inputs, dtype=tf.float32,
                 sequence_length=sequence_length)
 
-            outputs = tf.concat(2, outputs_tupple)
+            outputs = tf.concat(outputs_tupple, 2)
 
             return outputs
 
@@ -176,7 +176,7 @@ class PLSTMLayer(object):
             outputs, _ = bidirectional_dynamic_rnn(
                 lstm_cell, lstm_cell, inputs, dtype=tf.float32,
                 sequence_length=sequence_lengths)
-            outputs = tf.concat(2, outputs)
+            outputs = tf.concat(outputs, 2)
         return outputs, sequence_lengths
 
 def concatenate(inputs, sequence_lengths, scope):
@@ -194,12 +194,12 @@ def concatenate(inputs, sequence_lengths, scope):
     print('concat: initial shape: ', input_shape)
     concat_inputs = []
     for time_i in range(1, int(input_shape[1]), 2):
-        concat_input = tf.concat(1, [inputs[:, time_i-1, :],
-                                     inputs[:, time_i, :]],
+        concat_input = tf.concat([inputs[:, time_i-1, :],
+                                     inputs[:, time_i, :]], 1,
                                  name='plstm_concat')
         concat_inputs.append(concat_input)
 
-    inputs = tf.pack(concat_inputs, axis=1, name='plstm_pack')
+    inputs = tf.stack(concat_inputs, axis=1, name='plstm_pack')
 
     concat_shape = tf.Tensor.get_shape(inputs)
     print('concat: concat shape: ', concat_shape)

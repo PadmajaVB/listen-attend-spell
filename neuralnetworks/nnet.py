@@ -100,7 +100,7 @@ class Nnet(object):
             num_steps, numutterances_per_minibatch,
             int(self.conf['beam_width']))
 
-        #start the visualization if it is requested
+        # start the visualization if it is requested
         if self.conf['visualise'] == 'True':
             if os.path.isdir(self.conf['savedir'] + '/logdir'):
                 shutil.rmtree(self.conf['savedir'] + '/logdir')

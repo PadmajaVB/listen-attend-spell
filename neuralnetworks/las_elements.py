@@ -224,7 +224,7 @@ class StateTouple(_AttendAndSpellStateTouple):
                 # interesting.
                 squeezed_element = tf.squeeze(flat_self[i], [0])
                 squeezed_tensors.append(squeezed_element)
-            state_tensor = tf.concat(0, squeezed_tensors)
+            state_tensor = tf.concat(squeezed_tensors, 0)
             return state_tensor
 
     def get_element_lengths(self):
@@ -537,7 +537,7 @@ class AttendAndSpellCell(RNNCell):
 
             ### Compute the attend and spell state ###
             #s_i = RNN(s_(i-1), y_(i-1), c_(i-1))
-            rnn_input = tf.concat(1, [one_hot_char, context_vector],
+            rnn_input = tf.concat([one_hot_char, context_vector], 1,
                                   name='pre_context_rnn_input_concat')
             #print('pre_context input size:', tf.Tensor.get_shape(rnn_input))
 
@@ -547,8 +547,8 @@ class AttendAndSpellCell(RNNCell):
             ### compute the attention context. ###
             context_vector, alpha = self.attention_context(pre_context_out)
 
-            char_net_input = tf.concat(1,
-                                       [pre_context_out, context_vector],
+            char_net_input = tf.concat(
+                                       [pre_context_out, context_vector], 1,
                                        name='char_net_input_concat')
             logits = self.char_net(char_net_input, self.is_training)
 

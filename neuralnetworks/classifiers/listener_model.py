@@ -10,8 +10,8 @@ import tensorflow as tf
 
 # we are currenly in neuralnetworks, add it to the path.
 sys.path.append("neuralnetworks")
-from classifiers.classifier import Classifier
-from las_elements import Listener
+from .classifier import Classifier
+from neuralnetworks.las_elements import Listener
 from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 

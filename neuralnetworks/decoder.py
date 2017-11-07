@@ -207,11 +207,11 @@ class CTCDecoder(Decoder):
         """
 
         # Convert logits to time major
-        logits = tf.pack(tf.unpack(logits, axis=1))
+        logits = tf.stack(tf.unstack(logits, axis=1))
 
         # do the CTC beam search
         sparse_outputs, logprobs = tf.nn.ctc_beam_search_decoder(
-            tf.pack(logits), logits_seq_length, self.beam_width,
+            tf.stack(logits), logits_seq_length, self.beam_width,
             self.beam_width)
 
         # convert the outputs to dense tensors

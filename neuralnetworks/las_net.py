@@ -16,8 +16,8 @@ from neuralnetworks.las_elements import DropoutSettings
 from neuralnetworks.reg_trainer import LasCrossEnthropyTrainer
 from neuralnetworks.decoder import SimpleSeqDecoder
 import imp
-Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
-# from IPython.core.debugger import Tracer; debug_here = Tracer();
+# Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 class Nnet(object):
     '''a class for using a DBLTSM with CTC for ASR'''

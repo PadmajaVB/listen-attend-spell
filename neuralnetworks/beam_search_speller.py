@@ -9,7 +9,11 @@ from neuralnetworks.las_elements import DecodingTouple
 from neuralnetworks.las_elements import StateTouple
 import imp
 
-from IPython.core.debugger import Tracer; debug_here = Tracer();
+Tracer = imp.load_source('Tracer',
+                         'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+
+
+# from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 
 class BeamList(list):
@@ -540,8 +544,8 @@ it'll start from that number instead:
 
         # append the new selections.
         add_selected = tf.expand_dims(new_selected, 1)
-        selected = tf.concat(1, [old_selected,
-                                 add_selected])
+        selected = tf.concat([old_selected,
+                                 add_selected], 1)
         selected.set_shape([self.beam_width, None])
 
         '''
@@ -566,7 +570,7 @@ it'll start from that number instead:
 
         # update the states
         # create a cell state tensor.
-        state_tensor = tf.pack([state.to_tensor() for state in states_new])
+        state_tensor = tf.stack([state.to_tensor() for state in states_new])
         '''tf.pack is deprecated.
         It should be renamed to tf.stack.
         # 'x' is [1, 4]
@@ -575,7 +579,7 @@ it'll start from that number instead:
 stack([x, y, z])  # => [[1, 4], [2, 5], [3, 6]] (Pack along first dim.)
 stack([x, y, z], axis=1)  # => [[1, 2, 3], [4, 5, 6]]
 '''
-        pos_lst = tf.unpack(beam_pos_selected)
+        pos_lst = tf.unstack(beam_pos_selected)
         '''tf.unpack --> tf.unstack
         Unpacks the given dimension of a rank-R tensor into rank-(R-1) tensors.
         For example, given a tensor of shape (A, B, C, D);
