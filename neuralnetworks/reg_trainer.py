@@ -7,9 +7,9 @@ import tensorflow as tf
 import numpy as np
 from classifiers import seq_convertors
 import imp
-Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+# Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
 
-# from IPython.core.debugger import Tracer; debug_here = Tracer();
+from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 class Trainer(object):
     '''General class outlining the training environment of a classifier.'''
@@ -653,10 +653,10 @@ class CTCTrainer(Trainer):
             batch_size = int(targets.get_shape()[0])
 
             #convert the targets into a sparse tensor representation
-            indices = tf.concat(0, [tf.concat(
-                1, [tf.expand_dims(tf.tile([s], [target_seq_length[s]]), 1),
-                    tf.expand_dims(tf.range(target_seq_length[s]), 1)])
-                                    for s in range(batch_size)])
+            indices = tf.concat([tf.concat(
+                [tf.expand_dims(tf.tile([s], [target_seq_length[s]]), 1),
+                    tf.expand_dims(tf.range(target_seq_length[s]), 1)], 1)
+                                    for s in range(batch_size)], 0)
 
             values = tf.reshape(
                 seq_convertors.seq2nonseq(targets, target_seq_length), [-1])
@@ -691,7 +691,7 @@ class CTCTrainer(Trainer):
 
         #do the CTC beam search
         sparse_output, _ = tf.nn.ctc_beam_search_decoder(
-            tf.pack(tm_logits), logit_seq_length, self.beam_width)
+            tf.stack(tm_logits), logit_seq_length, self.beam_width)
 
         #convert the output to dense tensors with -1 as default values
         dense_output = tf.sparse_tensor_to_dense(sparse_output[0],

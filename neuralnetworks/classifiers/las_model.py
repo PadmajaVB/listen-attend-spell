@@ -8,8 +8,8 @@ from neuralnetworks.classifiers.classifier import Classifier
 from neuralnetworks.las_elements import Listener
 from neuralnetworks.beam_search_speller import BeamSearchSpeller
 import imp
-Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
-# from IPython.core.debugger import Tracer; debug_here = Tracer();
+# Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 
 class LasModel(Classifier):

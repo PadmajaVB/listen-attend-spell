@@ -18,9 +18,9 @@ from neuralnetworks.reg_trainer import CTCTrainer
 from neuralnetworks.decoder import CTCDecoder
 
 import imp
-Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+# Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
 
-# from IPython.core.debugger import Tracer; debug_here = Tracer();
+from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 
 class Nnet(object):

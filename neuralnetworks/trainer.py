@@ -10,17 +10,16 @@ from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 # import imp
 # Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
-#from home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger import Tracer; debug_here = Tracer();
-from neuralnetworks.classifiers import seq_convertors
+from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 class Trainer(object):
-	'''General class outlining the training environment of a classifier.'''
-	__metaclass__ = ABCMeta
+    '''General class outlining the training environment of a classifier.'''
+    __metaclass__ = ABCMeta
 
-	def __init__(self, classifier, input_dim, max_input_length,
-				 max_target_length, init_learning_rate, learning_rate_decay,
-				 num_steps, numutterances_per_minibatch):
-		"""
+    def __init__(self, classifier, input_dim, max_input_length,
+                 max_target_length, init_learning_rate, learning_rate_decay,
+                 num_steps, numutterances_per_minibatch):
+        '''
         NnetTrainer constructor, creates the training graph
 
         Args:
@@ -34,185 +33,191 @@ class Trainer(object):
             num_steps: the total number of steps that will be taken
             numutterances_per_minibatch: determines how many utterances are
                 processed at a time to limit memory usage
-        """
+        '''
 
-		self.numutterances_per_minibatch = numutterances_per_minibatch
-		self.max_input_length = max_input_length
-		self.max_target_length = max_target_length
+        self.numutterances_per_minibatch = numutterances_per_minibatch
+        self.max_input_length = max_input_length
+        self.max_target_length = max_target_length
 
-		# create the graph
-		self.graph = tf.Graph()
+        #create the graph
+        self.graph = tf.Graph()
 
-		# define the placeholders in the graph
-		with self.graph.as_default():
-			# create the inputs placeholder
-			self.inputs = tf.placeholder(
-					tf.float32, shape=[numutterances_per_minibatch,
-									   max_input_length,
-									   input_dim],
-					name='inputs')
+        #define the placeholders in the graph
+        with self.graph.as_default():
 
-			# reference labels
-			self.targets = tf.placeholder(
-					tf.int32, shape=[numutterances_per_minibatch,
-									 max_target_length,
-									 1],
-					name='targets')
+            #create the inputs placeholder
+            self.inputs = tf.placeholder(
+                tf.float32, shape=[numutterances_per_minibatch,
+                                   max_input_length,
+                                   input_dim],
+                name='inputs')
 
-			# the length of all the input sequences
-			self.input_seq_length = tf.placeholder(
-					tf.int32, shape=[numutterances_per_minibatch],
-					name='input_seq_length')
+            #reference labels
+            self.targets = tf.placeholder(
+                tf.int32, shape=[numutterances_per_minibatch,
+                                 max_target_length,
+                                 1],
+                name='targets')
 
-			# the length of all the output sequences
-			self.target_seq_length = tf.placeholder(
-					tf.int32, shape=[numutterances_per_minibatch],
-					name='output_seq_length')
 
-			# compute the training outputs of the classifier
-			trainlogits, logit_seq_length, self.modelsaver, self.control_ops = \
-				classifier(
-						self.inputs, self.input_seq_length, targets=self.targets,
-						target_seq_length=self.target_seq_length, is_training=True,
-						reuse=None, scope='Classifier')
+            #the length of all the input sequences
+            self.input_seq_length = tf.placeholder(
+                tf.int32, shape=[numutterances_per_minibatch],
+                name='input_seq_length')
 
-			# compute the validation output of the classifier
-			logits, val_logit_seq_length, _, _ = classifier(
-					self.inputs, self.input_seq_length, targets=self.targets,
-					target_seq_length=self.target_seq_length, is_training=False,
-					reuse=True, scope='Classifier')
+            #the length of all the output sequences
+            self.target_seq_length = tf.placeholder(
+                tf.int32, shape=[numutterances_per_minibatch],
+                name='output_seq_length')
 
-			# get a list of trainable variables in the decoder graph
-			params = tf.trainable_variables()
+            #compute the training outputs of the classifier
+            trainlogits, logit_seq_length, self.modelsaver, self.control_ops =\
+                classifier(
+                    self.inputs, self.input_seq_length, targets=self.targets,
+                    target_seq_length=self.target_seq_length, is_training=True,
+                    reuse=None, scope='Classifier')
+  
+            #compute the validation output of the classifier
+            logits, val_logit_seq_length, _, _ = classifier(
+                self.inputs, self.input_seq_length, targets=self.targets,
+                target_seq_length=self.target_seq_length, is_training=False,
+                reuse=True, scope='Classifier')
 
-			# for every parameter create a variable that holds its gradients
-			with tf.variable_scope('batch_variables'):
-				with tf.variable_scope('gradients'):
-					# the gradients for the entire batch
-					grads = [tf.get_variable(
-							param.op.name, param.get_shape().as_list(),
-							initializer=tf.constant_initializer(0),
-							trainable=False) for param in params]
+            #get a list of trainable variables in the decoder graph
+            params = tf.trainable_variables()
 
-				# the total loss of the entire batch
-				batch_loss = tf.get_variable(
-						'batch_loss', [], dtype=tf.float32,
-						initializer=tf.constant_initializer(0), trainable=False)
+            #for every parameter create a variable that holds its gradients
+            with tf.variable_scope('batch_variables'):
 
-				# the total number of utterances that are used in the batch
-				num_frames = tf.get_variable(
-						name='num_frames', shape=[], dtype=tf.int32,
-						initializer=tf.constant_initializer(0), trainable=False)
+                with tf.variable_scope('gradients'):
+                    #the gradients for the entire batch
+                    grads = [tf.get_variable(
+                        param.op.name, param.get_shape().as_list(),
+                        initializer=tf.constant_initializer(0),
+                        trainable=False) for param in params]
 
-				# create an operation to initialise the batch variables
-				self.init_batch = tf.initialize_variables(
-						grads + [num_frames, batch_loss])
+                #the total loss of the entire batch
+                batch_loss = tf.get_variable(
+                    'batch_loss', [], dtype=tf.float32,
+                    initializer=tf.constant_initializer(0), trainable=False)
 
-			with tf.variable_scope('train'):
-				# a variable to hold the amount of steps already taken
-				self.global_step = tf.get_variable(
-						'global_step', [], dtype=tf.int32,
-						initializer=tf.constant_initializer(0), trainable=False)
+                #the total number of utterances that are used in the batch
+                num_frames = tf.get_variable(
+                    name='num_frames', shape=[], dtype=tf.int32,
+                    initializer=tf.constant_initializer(0), trainable=False)
 
-				# a variable to scale the learning rate (used to reduce the
-				# learning rate in case validation performance drops)
-				learning_rate_fact = tf.get_variable(
-						'learning_rate_fact', [],
-						initializer=tf.constant_initializer(1.0), trainable=False)
+                #create an operation to initialise the batch variables
+                self.init_batch = tf.initialize_variables(
+                    grads + [num_frames, batch_loss])
 
-				# compute the learning rate with exponential decay and scale with
-				# the learning rate factor
-				self.learning_rate = tf.train.exponential_decay(
-						init_learning_rate, self.global_step, num_steps,
-						learning_rate_decay) * learning_rate_fact
 
-				# create the optimizer
-				optimizer = tf.train.AdamOptimizer(self.learning_rate)
+            with tf.variable_scope('train'):
 
-				# average the gradients
-				meangrads = [tf.div(grad, tf.cast(num_frames, tf.float32),
-									name=grad.op.name) for grad in grads]
+                #a variable to hold the amount of steps already taken
+                self.global_step = tf.get_variable(
+                    'global_step', [], dtype=tf.int32,
+                    initializer=tf.constant_initializer(0), trainable=False)
 
-				with tf.variable_scope('clip'):
-					# clip the gradients
-					meangrads = [tf.clip_by_value(grad, -1., 1.,
-												  name=grad.op.name)
-								 for grad in meangrads]
+                #a variable to scale the learning rate (used to reduce the
+                #learning rate in case validation performance drops)
+                learning_rate_fact = tf.get_variable(
+                    'learning_rate_fact', [],
+                    initializer=tf.constant_initializer(1.0), trainable=False)
 
-				# operation to apply the gradients
-				self.apply_gradients_op = optimizer.apply_gradients(
-						[(meangrads[p], params[p]) for p in range(len(meangrads))],
-						global_step=self.global_step, name='apply_gradients')
+                #compute the learning rate with exponential decay and scale with
+                #the learning rate factor
+                self.learning_rate = tf.train.exponential_decay(
+                    init_learning_rate, self.global_step, num_steps,
+                    learning_rate_decay) * learning_rate_fact
 
-				# compute the training loss
-				loss = self.compute_loss(
-						self.targets, trainlogits, logit_seq_length,
-						self.target_seq_length)
+                #create the optimizer
+                optimizer = tf.train.AdamOptimizer(self.learning_rate)
 
-				# operation to half the learning rate
-				self.halve_learningrate_op = learning_rate_fact.assign(
-						learning_rate_fact / 2).op
+                #average the gradients
+                meangrads = [tf.div(grad, tf.cast(num_frames, tf.float32),
+                                    name=grad.op.name) for grad in grads]
 
-				# compute the gradients of the batch
-				batchgrads = tf.gradients(loss, params)
+                with tf.variable_scope('clip'):
+                    #clip the gradients
+                    meangrads = [tf.clip_by_value(grad, -1., 1.,
+                                                  name=grad.op.name)
+                                 for grad in meangrads]
 
-				# operation to update the batch loss
-				# pylint: disable=E1101
-				update_loss = batch_loss.assign_add(loss)
+                #opperation to apply the gradients
+                self.apply_gradients_op = optimizer.apply_gradients(
+                    [(meangrads[p], params[p]) for p in range(len(meangrads))],
+                    global_step=self.global_step, name='apply_gradients')
 
-				# operation to update num_frames
-				# pylint: disable=E1101
-				update_num_frames = num_frames.assign_add(
-						numutterances_per_minibatch)
+                #compute the training loss
+                loss = self.compute_loss(
+                    self.targets, trainlogits, logit_seq_length,
+                    self.target_seq_length)
 
-				# operation to update the gradients
-				update_gradients = [
-					grads[p].assign_add(batchgrads[p])
-					for p in range(len(grads)) if batchgrads[p] is not None]
+                #operation to half the learning rate
+                self.halve_learningrate_op = learning_rate_fact.assign(
+                    learning_rate_fact/2).op
 
-				# all remaining operations with the UPDATE_OPS GraphKeys
-				update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
+                #compute the gradients of the batch
+                batchgrads = tf.gradients(loss, params)
 
-				# create an operation to update the gradients, the batch_loss
-				# and do all other update ops
-				# pylint: disable=E1101
-				self.update_op = tf.group(
-						*(update_gradients + [update_loss] + update_ops
-						  + [update_num_frames]),
-						name='update_gradients')
+                #operation to update the batch loss
+                #pylint: disable=E1101
+                update_loss = batch_loss.assign_add(loss)
 
-				# operation to compute the average loss in the batch
-				self.average_loss = batch_loss / tf.cast(num_frames, tf.float32)
+                #operation to update num_frames
+                #pylint: disable=E1101
+                update_num_frames = num_frames.assign_add(
+                    numutterances_per_minibatch)
 
-				# saver for the training variables
-				self.saver = tf.train.Saver(tf.get_collection(
-						tf.GraphKeys.VARIABLES, scope='train'))
+                #operation to update the gradients
+                update_gradients = [
+                    grads[p].assign_add(batchgrads[p])
+                    for p in range(len(grads)) if batchgrads[p] is not None]
 
-			with tf.name_scope('valid'):
-				# compute the outputs that will be used for validation
-				# TODO: push bugfix
-				self.outputs, self.outputs_seq_length = \
-					self.validation(logits, val_logit_seq_length)
+                #all remaining operations with the UPDATE_OPS GraphKeys
+                update_ops = tf.get_collection(tf.GraphKeys.UPDATE_OPS)
 
-				# add an operation to initialise all the variables in the graph
-			self.init_op = tf.initialize_all_variables()
+                #create an operation to update the gradients, the batch_loss
+                #and do all other update ops
+                #pylint: disable=E1101
+                self.update_op = tf.group(
+                    *(update_gradients + [update_loss] + update_ops
+                      + [update_num_frames]),
+                    name='update_gradients')
 
-			# create the summaries for visualisation
-			self.summary = tf.merge_summary(
-					[tf.histogram_summary(val.name, val)
-					 for val in params + meangrads]
-					+ [tf.scalar_summary('loss', self.average_loss)])
+                #operation to compute the average loss in the batch
+                self.average_loss = batch_loss/tf.cast(num_frames, tf.float32)
 
-		# specify that the graph can no longer be modified after this point
-		self.graph.finalize()
+                #saver for the training variables
+                self.saver = tf.train.Saver(tf.get_collection(
+                    tf.GraphKeys.VARIABLES, scope='train'))
 
-		# start without visualisation
-		self.summarywriter = None
+            with tf.name_scope('valid'):
+                #compute the outputs that will be used for validation
+                #TODO: push bugfix
+                self.outputs, self.outputs_seq_length = \
+                    self.validation(logits, val_logit_seq_length) 
 
-	@abstractmethod
-	def compute_loss(self, targets, logits, logit_seq_length,
-					 target_seq_length):
-		'''
+            # add an operation to initialise all the variables in the graph
+            self.init_op = tf.initialize_all_variables()
+
+            #create the summaries for visualisation
+            self.summary = tf.summary.merge(
+                [tf.summary.histogram(val.name, val)
+                 for val in params+meangrads]
+                + [tf.summary.scalar('loss', self.average_loss)])
+
+
+        #specify that the graph can no longer be modified after this point
+        self.graph.finalize()
+
+        #start without visualisation
+        self.summarywriter = None
+
+    @abstractmethod
+    def compute_loss(self, targets, logits, logit_seq_length,
+                     target_seq_length):
+        '''
         Compute the loss
 
         Creates the operation to compute the loss, this is specific to each
@@ -231,11 +236,11 @@ class Trainer(object):
             a scalar value containing the total loss
         '''
 
-		raise NotImplementedError('Abstract method')
+        raise NotImplementedError('Abstract method')
 
-	@abstractmethod
-	def validation(self, logits, logit_seq_length):
-		'''
+    @abstractmethod
+    def validation(self, logits, logit_seq_length):
+        '''
         compute the outputs that will be used for validation
 
         Args:
@@ -246,11 +251,11 @@ class Trainer(object):
             The validation outputs, and output sequence lengths.
         '''
 
-		raise NotImplementedError('Abstract method')
+        raise NotImplementedError('Abstract method')
 
-	@abstractmethod
-	def validation_metric(self, outputs, output_seq_length, targets):
-		'''
+    @abstractmethod
+    def validation_metric(self, outputs, output_seq_length, targets):
+        '''
         compute the metric that will be used for validation
 
         The metric can be e.g. an error rate or a loss
@@ -263,27 +268,28 @@ class Trainer(object):
             The validation outputs
         '''
 
-		raise NotImplementedError('Abstract method')
+        raise NotImplementedError('Abstract method')
 
-	def initialize(self):
-		'''Initialize all the variables in the graph'''
+    def initialize(self):
+        '''Initialize all the variables in the graph'''
 
-		self.init_op.run()  # pylint: disable=E1101
-		print("trainer initialized...")
+        self.init_op.run() #pylint: disable=E1101
+        print("trainer initialized...")
 
-	def start_visualization(self, logdir):
-		'''
+    def start_visualization(self, logdir):
+        '''
         open a summarywriter for visualisation and add the graph
 
         Args:
             logdir: directory where the summaries will be written
         '''
 
-		self.summarywriter = tf.train.SummaryWriter(logdir=logdir,
-													graph=self.graph)
+        self.summarywriter = tf.summary.FileWriter(logdir=logdir,
+                                                    graph=self.graph)
 
-	def update(self, inputs, targets):
-		'''
+
+    def update(self, inputs, targets):
+        '''
         update the neural model with a batch or training data
 
         Args:
@@ -299,53 +305,55 @@ class Trainer(object):
                 - the learning rate used at this step
         '''
 
-		# get a list of sequence lengths
-		input_seq_length = [i.shape[0] for i in inputs]
-		output_seq_length = [t.shape[0] for t in targets]
+        #get a list of sequence lengths
+        input_seq_length = [i.shape[0] for i in inputs]
+        output_seq_length = [t.shape[0] for t in targets]
 
-		# pad the inputs and targets till the maximum lengths
-		padded_inputs, padded_targets = padd_batch(
-				inputs, targets, self.max_input_length, self.max_target_length)
+        #pad the inputs and targets till the maximum lengths
+        padded_inputs, padded_targets = padd_batch(
+            inputs, targets, self.max_input_length, self.max_target_length)
 
-		# divide the batch into minibatches
-		minibatches = split_batch(
-				padded_inputs, padded_targets, input_seq_length, output_seq_length,
-				self.numutterances_per_minibatch)
+        #divide the batch into minibatches
+        minibatches = split_batch(
+            padded_inputs, padded_targets, input_seq_length, output_seq_length,
+            self.numutterances_per_minibatch)
 
-		# feed in the minibatches one by one and accumulate the gradients and
-		# loss
-		for minibatch in minibatches:
-			# pylint: disable=E1101
-			self.update_op.run(
-					feed_dict={self.inputs: minibatch[0],
-							   self.targets: minibatch[1],
-							   self.input_seq_length: minibatch[2],
-							   self.target_seq_length: minibatch[3]})
+        #feed in the minibatches one by one and accumulate the gradients and
+        #loss
+        for minibatch in minibatches:
 
-		# apply the accumulated gradients to update the model parameters and
-		# evaluate the loss
-		if self.summarywriter is not None:
-			[loss, summary, lr, _] = tf.get_default_session().run(
-					[self.average_loss, self.summary, self.learning_rate,
-					 self.apply_gradients_op])
+            #pylint: disable=E1101
+            self.update_op.run(
+                feed_dict={self.inputs:minibatch[0],
+                           self.targets:minibatch[1],
+                           self.input_seq_length:minibatch[2],
+                           self.target_seq_length:minibatch[3]})
 
-			# pylint: disable=E1101
-			self.summarywriter.add_summary(summary,
-										   global_step=self.global_step.eval())
+        #apply the accumulated gradients to update the model parameters and
+        #evaluate the loss
+        if self.summarywriter is not None:
+            [loss, summary, lr, _] = tf.get_default_session().run(
+                [self.average_loss, self.summary, self.learning_rate,
+                 self.apply_gradients_op])
 
-		else:
-			[loss, _, lr] = tf.get_default_session().run(
-					[self.average_loss, self.learning_rate,
-					 self.apply_gradients_op])
+            #pylint: disable=E1101
+            self.summarywriter.add_summary(summary,
+                                           global_step=self.global_step.eval())
 
-		# reinitialize the batch variables
-		# pylint: disable=E1101
-		self.init_batch.run()
+        else:
+            [loss, _, lr] = tf.get_default_session().run(
+                [self.average_loss, self.learning_rate,
+                 self.apply_gradients_op])
 
-		return loss, lr
 
-	def evaluate(self, inputs, targets):
-		'''
+        #reinitialize the batch variables
+        #pylint: disable=E1101
+        self.init_batch.run()
+
+        return loss, lr
+
+    def evaluate(self, inputs, targets):
+        '''
         Evaluate the performance of the neural net
 
         Args:
@@ -360,88 +368,88 @@ class Trainer(object):
             the loss of the batch
         '''
 
-		if inputs is None or targets is None:
-			return None
+        if inputs is None or targets is None:
+            return None
 
-		# get a list of sequence lengths
-		input_seq_length = [i.shape[0] for i in inputs]
-		output_seq_length = [t.shape[0] for t in targets]
+        #get a list of sequence lengths
+        input_seq_length = [i.shape[0] for i in inputs]
+        output_seq_length = [t.shape[0] for t in targets]
 
-		# pad the inputs and targets till the maximum lengths
-		padded_inputs, padded_targets = padd_batch(
-				inputs, targets, self.max_input_length, self.max_target_length)
+        #pad the inputs and targets till the maximum lengths
+        padded_inputs, padded_targets = padd_batch(
+            inputs, targets, self.max_input_length, self.max_target_length)
 
-		# divide the batch into minibatches
-		minibatches = split_batch(
-				padded_inputs, padded_targets, input_seq_length, output_seq_length,
-				self.numutterances_per_minibatch)
+        #divide the batch into minibatches
+        minibatches = split_batch(
+            padded_inputs, padded_targets, input_seq_length, output_seq_length,
+            self.numutterances_per_minibatch)
 
-		# feed in the minibatches one by one and get the validation outputs
-		outputs = []
-		seq_lengths = []
-		for minibatch in minibatches:
-			feed_dict = {self.inputs: minibatch[0],
-						 self.input_seq_length: minibatch[2]}
-			output, seq_length = tf.get_default_session().run(
-					[self.outputs, self.outputs_seq_length], feed_dict=feed_dict)
-			outputs.append(output)
-			seq_lengths.append(seq_length)
+        #feed in the minibatches one by one and get the validation outputs
+        outputs = []
+        seq_lengths = []
+        for minibatch in minibatches:
 
-		error = self.validation_metric(outputs[:len(targets)], seq_lengths, targets)
+            feed_dict = {self.inputs:minibatch[0], 
+                         self.input_seq_length:minibatch[2]}
+            output, seq_length = tf.get_default_session().run(
+                [self.outputs, self.outputs_seq_length], feed_dict=feed_dict)
+            outputs.append(output)
+            seq_lengths.append(seq_length)
 
-		return error
+        error = self.validation_metric(outputs[:len(targets)], seq_lengths, targets)
 
-	def halve_learning_rate(self):
-		'''halve the learning rate'''
+        return error
 
-		self.halve_learningrate_op.run()
+    def halve_learning_rate(self):
+        '''halve the learning rate'''
 
-	def save_model(self, filename):
-		'''
+        self.halve_learningrate_op.run()
+
+    def save_model(self, filename):
+        '''
         Save the model
 
         Args:
             filename: path to the model file
         '''
-		self.modelsaver.save(tf.get_default_session(), filename)
+        self.modelsaver.save(tf.get_default_session(), filename)
 
-	def restore_model(self, filename):
-		'''
+    def restore_model(self, filename):
+        '''
         Load the model
 
         Args:
             filename: path where the model will be saved
         '''
-		self.modelsaver.restore(tf.get_default_session(), filename)
+        self.modelsaver.restore(tf.get_default_session(), filename)
 
-	def save_trainer(self, filename):
-		'''
+    def save_trainer(self, filename):
+        '''
         Save the training progress (including the model)
 
         Args:
             filename: path where the model will be saved
         '''
-		self.modelsaver.save(tf.get_default_session(), filename)
-		self.saver.save(tf.get_default_session(), filename + '_trainvars')
+        self.modelsaver.save(tf.get_default_session(), filename)
+        self.saver.save(tf.get_default_session(), filename + '_trainvars')
 
-	def restore_trainer(self, filename):
-		'''
+    def restore_trainer(self, filename):
+        '''
         Load the training progress (including the model)
 
         Args:
             filename: path where the model will be saved
         '''
-		self.modelsaver.restore(tf.get_default_session(), filename)
-		self.saver.restore(tf.get_default_session(), filename + '_trainvars')
-
+        self.modelsaver.restore(tf.get_default_session(), filename)
+        self.saver.restore(tf.get_default_session(), filename + '_trainvars')
 
 class LasCrossEnthropyTrainer(Trainer):
-	'''A trainer that minimises the cross-enthropy loss, the output sequences
+    '''A trainer that minimises the cross-enthropy loss, the output sequences
     must be of the same length as the input sequences'''
 
-	def compute_loss(self, targets, logits, logit_seq_length,
-					 target_seq_length):
-		'''
+    def compute_loss(self, targets, logits, logit_seq_length,
+                     target_seq_length):
+        '''
         Compute the loss
 
         Creates the operation to compute the cross-enthropy loss for every input
@@ -461,32 +469,33 @@ class LasCrossEnthropyTrainer(Trainer):
             a scalar value containing the loss
         '''
 
-		with tf.name_scope('cross_enthropy_loss'):
-			# training starts at t=1.
-			targets_t_one = targets[:, 1:, :]
-			target_seq_length_t_one = target_seq_length - 1
+        with tf.name_scope('cross_enthropy_loss'):
 
-			# convert to non sequential data
-			nonseq_targets = seq_convertors.seq2nonseq(targets_t_one,
-													   target_seq_length_t_one)
-			nonseq_logits = seq_convertors.seq2nonseq(logits, logit_seq_length)
+            #training starts at t=1.
+            targets_t_one = targets[:, 1:, :]
+            target_seq_length_t_one = target_seq_length - 1
 
-			# make a vector out of the targets
-			nonseq_targets = tf.reshape(nonseq_targets, [-1])
+            #convert to non sequential data
+            nonseq_targets = seq_convertors.seq2nonseq(targets_t_one,
+                                                       target_seq_length_t_one)
+            nonseq_logits = seq_convertors.seq2nonseq(logits, logit_seq_length)
 
-			# one hot encode the targets
-			# pylint: disable=E1101
-			nonseq_targets = tf.one_hot(nonseq_targets,
-										int(nonseq_logits.get_shape()[1]))
+            #make a vector out of the targets
+            nonseq_targets = tf.reshape(nonseq_targets, [-1])
 
-			# compute the cross-enthropy loss
-			loss = tf.reduce_sum(tf.nn.softmax_cross_entropy_with_logits(
-					nonseq_logits, nonseq_targets))
+            #one hot encode the targets
+            #pylint: disable=E1101
+            nonseq_targets = tf.one_hot(nonseq_targets,
+                                        int(nonseq_logits.get_shape()[1]))
 
-		return loss
+            #compute the cross-enthropy loss
+            loss = tf.reduce_sum(tf.nn.softmax_cross_entropy_with_logits(
+                nonseq_logits, nonseq_targets))
 
-	def validation(self, logits, logit_seq_length):
-		'''
+        return loss
+
+    def validation(self, logits, logit_seq_length):
+        '''
         Do nothing.
 
         Args:
@@ -497,82 +506,80 @@ class LasCrossEnthropyTrainer(Trainer):
         Returns:
             a tensor with the same shape as logits with the label probabilities
         '''
-		# remove outputs after eos token using the seq_lengths.
+        #remove outputs after eos token using the seq_lengths.
 
-		return logits, logit_seq_length
+        return logits, logit_seq_length
 
-	@staticmethod
-	def greedy_search(clean_output):
-		""" Extract the targets char probability
+    @staticmethod
+    def greedy_search(clean_output):
+        """ Extract the targets char probability
         Args:
             clean_output: A list of shape [batch_size][max_time, no_labels]
         Returns:
             utterance_char_batches: A list of shape [batch_size][max_time]"""
-		utterance_char_batches = []
-		for batch in range(0, len(clean_output)):
-			utterance_chars_nos = []
-			for time in range(0, clean_output[batch].shape[0]):
-				utterance_chars_nos.append(np.argmax(clean_output[batch][time, :]))
-			utterance_char_batches.append(np.array(utterance_chars_nos))
-		return utterance_char_batches
+        utterance_char_batches = []
+        for batch in range(0, len(clean_output)):
+            utterance_chars_nos = []
+            for time in range(0, clean_output[batch].shape[0]):
+                utterance_chars_nos.append(np.argmax(clean_output[batch][time, :]))
+            utterance_char_batches.append(np.array(utterance_chars_nos))
+        return utterance_char_batches
 
-	@staticmethod
-	def edit_distance(seq1, seq2):
-		""" Calculate edit distance between sequences x and y using
+    @staticmethod
+    def edit_distance(seq1, seq2):
+        """ Calculate edit distance between sequences x and y using
             matrix dynamic programming.  Return distance.
             source, Ben Langmead:
             http://www.cs.jhu.edu/~langmea/resources/lecture_notes/dp_and_edit_dist.pdf
         """
-		dmat = np.zeros((len(seq1) + 1, len(seq2) + 1), dtype=int)
-		dmat[0, 1:] = range(1, len(seq2) + 1)
-		dmat[1:, 0] = range(1, len(seq1) + 1)
-		for i in range(1, len(seq1) + 1):
-			for j in range(1, len(seq2) + 1):
-				delt = 1 if seq1[i - 1] != seq2[j - 1] else 0
-				dmat[i, j] = min(dmat[i - 1, j - 1] + delt, dmat[i - 1, j] + 1, dmat[i, j - 1] + 1)
-		return dmat[len(seq1), len(seq2)]
+        dmat = np.zeros((len(seq1)+1, len(seq2)+1), dtype=int)
+        dmat[0, 1:] = range(1, len(seq2)+1)
+        dmat[1:, 0] = range(1, len(seq1)+1)
+        for i in range(1, len(seq1)+1):
+            for j in range(1, len(seq2)+1):
+                delt = 1 if seq1[i-1] != seq2[j-1] else 0
+                dmat[i, j] = min(dmat[i-1, j-1]+delt, dmat[i-1, j]+1, dmat[i, j-1]+1)
+        return dmat[len(seq1), len(seq2)]
 
-	def validation_metric(self, outputs, out_seq_length, targets):
-		'''the cross-enthropy
+    def validation_metric(self, outputs, out_seq_length, targets):
+        '''the cross-enthropy
 
         Args:
             outputs: the validation output, which is a list containing the
                 label probabilities of size [batch_size][max_input_length, dim].
             targets: a list containing the ground truth target labels
         '''
-		np_outputs = np.array(outputs)
-		# concatenate the minibatches.
-		batch_size = len(targets)
-		mini_batch_shape = outputs[0].shape
-		np_outputs = np.reshape(outputs, [batch_size, mini_batch_shape[1], mini_batch_shape[2]])
-		np_seq_length = np.reshape(np.array(out_seq_length), batch_size)
-		# remove outputs after the seq_length
-		clean_outputs = []
-		for batch_count in range(batch_size):
-			clean_outputs.append(np_outputs[batch_count, 0:(np_seq_length[batch_count]), :])
-		decoded_outputs = self.greedy_search(clean_outputs)
-		num_frames = 0.0
-		tot_lev = 0.0
-		for utt_no in range(0, len(decoded_outputs)):
-			num_frames += targets[utt_no].size
-			tot_lev = tot_lev + self.edit_distance(decoded_outputs[utt_no],
-												   targets[utt_no])
-		norm_lev = tot_lev / num_frames
+        np_outputs = np.array(outputs)
+        #concatenate the minibatches.
+        batch_size = len(targets)
+        mini_batch_shape = outputs[0].shape
+        np_outputs = np.reshape(outputs, [batch_size, mini_batch_shape[1], mini_batch_shape[2]])
+        np_seq_length = np.reshape(np.array(out_seq_length), batch_size)
+        #remove outputs after the seq_length
+        clean_outputs = []
+        for batch_count in range(batch_size):
+            clean_outputs.append(np_outputs[batch_count, 0:(np_seq_length[batch_count]), :])            
+        decoded_outputs = self.greedy_search(clean_outputs)
+        num_frames = 0.0
+        tot_lev = 0.0
+        for utt_no in range(0, len(decoded_outputs)):
+            num_frames += targets[utt_no].size
+            tot_lev = tot_lev + self.edit_distance(decoded_outputs[utt_no], 
+                                                   targets[utt_no])
+        norm_lev = tot_lev/num_frames
 
-		print('Example targets:    ', targets[0])
-		print('Greedy  targets:    ', decoded_outputs[0])
-		print('Decoded  length:', out_seq_length[0][0])
-
-		return norm_lev
-
+        print('Example targets:    ', targets[0])
+        print('Greedy  targets:    ', decoded_outputs[0])
+        print('Decoded  length:', out_seq_length[0][0])
+        
+        return norm_lev
 
 class CTCTrainer(Trainer):
-	'''A trainer that minimises the CTC loss, the output sequences'''
-
-	def __init__(self, classifier, input_dim, max_input_length,
-				 max_target_length, init_learning_rate, learning_rate_decay,
-				 num_steps, numutterances_per_minibatch, beam_width):
-		'''
+    '''A trainer that minimises the CTC loss, the output sequences'''
+    def __init__(self, classifier, input_dim, max_input_length,
+                 max_target_length, init_learning_rate, learning_rate_decay,
+                 num_steps, numutterances_per_minibatch, beam_width):
+        '''
         NnetTrainer constructor, creates the training graph
 
         Args:
@@ -589,15 +596,15 @@ class CTCTrainer(Trainer):
             beam_width: the width of the beam used for validation
         '''
 
-		self.beam_width = beam_width
-		super(CTCTrainer, self).__init__(
-				classifier, input_dim, max_input_length, max_target_length,
-				init_learning_rate, learning_rate_decay, num_steps, \
-				numutterances_per_minibatch)
+        self.beam_width = beam_width
+        super(CTCTrainer, self).__init__(
+            classifier, input_dim, max_input_length, max_target_length,
+            init_learning_rate, learning_rate_decay, num_steps, \
+              numutterances_per_minibatch)
 
-	def compute_loss(self, targets, logits, logit_seq_length,
-					 target_seq_length):
-		'''
+    def compute_loss(self, targets, logits, logit_seq_length,
+                     target_seq_length):
+        '''
         Compute the loss
 
         Creates the operation to compute the CTC loss for every input
@@ -617,32 +624,33 @@ class CTCTrainer(Trainer):
             a scalar value containing the loss
         '''
 
-		with tf.name_scope('CTC_loss'):
-			# get the batch size
-			batch_size = int(targets.get_shape()[0])
+        with tf.name_scope('CTC_loss'):
 
-			# convert the targets into a sparse tensor representation
-			indices = tf.concat(0, [tf.concat(
-					1, [tf.expand_dims(tf.tile([s], [target_seq_length[s]]), 1),
-						tf.expand_dims(tf.range(target_seq_length[s]), 1)])
-									for s in range(batch_size)])
+            #get the batch size
+            batch_size = int(targets.get_shape()[0])
 
-			values = tf.reshape(
-					seq_convertors.seq2nonseq(targets, target_seq_length), [-1])
+            #convert the targets into a sparse tensor representation
+            indices = tf.concat([tf.concat(
+                [tf.expand_dims(tf.tile([s], [target_seq_length[s]]), 1),
+                    tf.expand_dims(tf.range(target_seq_length[s]), 1)], 1)
+                                    for s in range(batch_size)], 0)
 
-			shape = [batch_size, int(targets.get_shape()[1])]
+            values = tf.reshape(
+                seq_convertors.seq2nonseq(targets, target_seq_length), [-1])
 
-			sparse_targets = tf.SparseTensor(tf.cast(indices, tf.int64), values,
-											 shape)
+            shape = [batch_size, int(targets.get_shape()[1])]
 
-			loss = tf.reduce_sum(tf.nn.ctc_loss(logits, sparse_targets,
-												logit_seq_length,
-												time_major=False))
+            sparse_targets = tf.SparseTensor(tf.cast(indices, tf.int64), values,
+                                             shape)
 
-		return loss
+            loss = tf.reduce_sum(tf.nn.ctc_loss(sparse_targets, logits,
+                                                logit_seq_length,
+                                                time_major=False))
 
-	def validation(self, logits, logit_seq_length):
-		'''
+        return loss
+
+    def validation(self, logits, logit_seq_length):
+        '''
         decode the validation set with CTC beam search
 
         Args:
@@ -655,21 +663,22 @@ class CTCTrainer(Trainer):
             [batch_size, max_decoded_length]
         '''
 
-		# Convert logits to time major
-		tm_logits = tf.transpose(logits, [1, 0, 2])
+        #Convert logits to time major
+        tm_logits = tf.transpose(logits, [1, 0, 2])
 
-		# do the CTC beam search
-		sparse_output, _ = tf.nn.ctc_beam_search_decoder(
-				tf.pack(tm_logits), logit_seq_length, self.beam_width)
+        #do the CTC beam search
+        sparse_output, _ = tf.nn.ctc_beam_search_decoder(
+            tf.stack(tm_logits), logit_seq_length, self.beam_width)
 
-		# convert the output to dense tensors with -1 as default values
-		dense_output = tf.sparse_tensor_to_dense(sparse_output[0],
-												 default_value=-1)
+        #convert the output to dense tensors with -1 as default values
+        dense_output = tf.sparse_tensor_to_dense(sparse_output[0],
+                                                 default_value=-1)
 
-		return dense_output, logit_seq_length
+        return dense_output, logit_seq_length
 
-	def validation_metric(self, outputs, output_seq_length, targets):
-		'''the Label Error Rate for the decoded labels
+
+    def validation_metric(self, outputs, output_seq_length, targets):
+        '''the Label Error Rate for the decoded labels
 
         Args:
             outputs: the validation output, which is a list containing the
@@ -677,36 +686,35 @@ class CTCTrainer(Trainer):
                 output sequences are padded with -1
             targets: a list containing the ground truth target labels
         '''
-		conc = []
-		for out in outputs:
-			conc += list(out)
-		outputs = conc
-		# remove the padding from the outputs
-		trimmed_outputs = [o[np.where(o != -1)] for o in outputs]
-		errors = 0
-		for k, target in enumerate(targets):
-			error_matrix = np.zeros([target.size + 1,
-									 trimmed_outputs[k].size + 1])
+        conc = []
+        for out in outputs:
+            conc += list(out)
+        outputs = conc
+        #remove the padding from the outputs
+        trimmed_outputs = [o[np.where(o != -1)] for o in outputs]
+        errors = 0
+        for k, target in enumerate(targets):
+            error_matrix = np.zeros([target.size + 1,
+                                     trimmed_outputs[k].size + 1])
 
-			error_matrix[:, 0] = np.arange(target.size + 1)
-			error_matrix[0, :] = np.arange(trimmed_outputs[k].size + 1)
+            error_matrix[:, 0] = np.arange(target.size + 1)
+            error_matrix[0, :] = np.arange(trimmed_outputs[k].size + 1)
 
-			for x in range(1, target.size + 1):
-				for y in range(1, trimmed_outputs[k].size + 1):
-					error_matrix[x, y] = min([
-						error_matrix[x - 1, y] + 1, error_matrix[x, y - 1] + 1,
-						error_matrix[x - 1, y - 1] + (target[x - 1] !=
-													  trimmed_outputs[k][y - 1])])
+            for x in range(1, target.size + 1):
+                for y in range(1, trimmed_outputs[k].size + 1):
+                    error_matrix[x, y] = min([
+                        error_matrix[x-1, y] + 1, error_matrix[x, y-1] + 1,
+                        error_matrix[x-1, y-1] + (target[x-1] !=
+                                                  trimmed_outputs[k][y-1])])
 
-			errors += error_matrix[-1, -1]
+            errors += error_matrix[-1, -1]
 
-		ler = errors / sum([target.size for target in targets])
+        ler = errors/sum([target.size for target in targets])
 
-		return ler
-
+        return ler
 
 def padd_batch(inputs, targets, input_length, target_length):
-	'''
+    '''
     Pad the inputs and targets so they have the maximum length
 
     Args:
@@ -726,19 +734,19 @@ def padd_batch(inputs, targets, input_length, target_length):
             - the padded targets
     '''
 
-	padded_inputs = [np.append(
-			i, np.zeros([input_length - i.shape[0], i.shape[1]]), 0)
-					 for i in inputs]
-	padded_targets = [np.append(
-			t, np.zeros(target_length - t.shape[0]), 0)
-					  for t in targets]
+    padded_inputs = [np.append(
+        i, np.zeros([input_length-i.shape[0], i.shape[1]]), 0)
+                     for i in inputs]
+    padded_targets = [np.append(
+        t, np.zeros(target_length-t.shape[0]), 0)
+                      for t in targets]
 
-	return padded_inputs, padded_targets
+    return padded_inputs, padded_targets
 
 
 def split_batch(inputs, targets, input_seq_length, output_seq_length,
-				numutterances_per_minibatch):
-	'''
+                numutterances_per_minibatch):
+    '''
     Split batch data into smaller minibatches.
 
     Args:
@@ -757,47 +765,48 @@ def split_batch(inputs, targets, input_seq_length, output_seq_length,
             - the outputs sequence lengths
     '''
 
-	# fill the inputs to have a round number of minibatches
-	added_inputs = (inputs
-					+ (len(inputs) % numutterances_per_minibatch)
-					* [np.zeros([inputs[0].shape[0],
-								 inputs[0].shape[1]])])
+    #fill the inputs to have a round number of minibatches
+    added_inputs = (inputs
+                    + (len(inputs)%numutterances_per_minibatch)
+                    *[np.zeros([inputs[0].shape[0],
+                                inputs[0].shape[1]])])
 
-	added_targets = (targets
-					 + (len(targets) % numutterances_per_minibatch)
-					 * [np.zeros(targets[0].size)])
+    added_targets = (targets
+                     + (len(targets)%numutterances_per_minibatch)
+                     *[np.zeros(targets[0].size)])
 
-	added_input_seq_length = \
-		(input_seq_length
-		 + ((len(input_seq_length) % numutterances_per_minibatch)) * [0])
+    added_input_seq_length = \
+        (input_seq_length
+         + ((len(input_seq_length)%numutterances_per_minibatch))*[0])
 
-	added_output_seq_length = \
-		(output_seq_length
-		 + ((len(output_seq_length) % numutterances_per_minibatch)) * [0])
+    added_output_seq_length = \
+        (output_seq_length
+         + ((len(output_seq_length)%numutterances_per_minibatch))*[0])
 
-	# create the minibatches
-	minibatches = []
+    #create the minibatches
+    minibatches = []
 
-	for k in range(len(added_inputs) / numutterances_per_minibatch):
-		minibatch_inputs = np.array(
-				added_inputs[k * numutterances_per_minibatch:
-				(k + 1) * numutterances_per_minibatch])
+    for k in range(len(added_inputs)/numutterances_per_minibatch):
 
-		minibatch_targets = np.array(
-				added_targets[k * numutterances_per_minibatch:
-				(k + 1) * numutterances_per_minibatch])
+        minibatch_inputs = np.array(
+            added_inputs[k*numutterances_per_minibatch:
+                         (k+1)*numutterances_per_minibatch])
 
-		minibatch_input_seq_length = np.array(added_input_seq_length[
-											  k * numutterances_per_minibatch:
-											  (k + 1) * numutterances_per_minibatch])
+        minibatch_targets = np.array(
+            added_targets[k*numutterances_per_minibatch:
+                          (k+1)*numutterances_per_minibatch])
 
-		minibatch_output_seq_length = np.array(added_output_seq_length[
-											   k * numutterances_per_minibatch:
-											   (k + 1) * numutterances_per_minibatch])
+        minibatch_input_seq_length = np.array(added_input_seq_length[
+            k*numutterances_per_minibatch:
+            (k+1)*numutterances_per_minibatch])
 
-		minibatches.append((minibatch_inputs,
-							minibatch_targets[:, :, np.newaxis],
-							minibatch_input_seq_length,
-							minibatch_output_seq_length))
+        minibatch_output_seq_length = np.array(added_output_seq_length[
+            k*numutterances_per_minibatch:
+            (k+1)*numutterances_per_minibatch])
 
-	return minibatches
+        minibatches.append((minibatch_inputs,
+                            minibatch_targets[:, :, np.newaxis],
+                            minibatch_input_seq_length,
+                            minibatch_output_seq_length))
+
+    return minibatches
