@@ -51,8 +51,12 @@ class Decoder(object):
             logits, logits_seq_length, self.saver, _ = \
                 classifier(
                     self.inputs, self.input_seq_length, targets=None,
-                    target_seq_length=None, is_training=False, decoding=True,
+                    target_seq_length=None, is_training=False,
                     reuse=None, scope='Classifier')
+                # classifier(
+                    # self.inputs, self.input_seq_length, targets=None,
+                    # target_seq_length=None, is_training=False, decoding=True,
+                    # reuse=None, scope='Classifier')
 
             # compute the outputs based on the classifier output logits
             self.outputs = self.get_outputs(logits, logits_seq_length)
