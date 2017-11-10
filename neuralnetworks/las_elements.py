@@ -18,8 +18,8 @@ from neuralnetworks.classifiers.activation import IdentityWrapper
 from neuralnetworks.classifiers.seq_convertors import seq2nonseq
 from neuralnetworks.classifiers.seq_convertors import nonseq2seq
 import imp
-Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
-# from IPython.core.debugger import Tracer; debug_here = Tracer();
+# Tracer = imp.load_source('Tracer', 'home/padmaja/Downloads/Downloads/anaconda3/lib/python3.5/site-packages/IPython.core.debugger')
+from IPython.core.debugger import Tracer; debug_here = Tracer();
 
 # disable the too few public methods complaint
 # pylint: disable=R0903

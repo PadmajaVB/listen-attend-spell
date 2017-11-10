@@ -10,7 +10,7 @@ from processing import ark, prepare_data, feature_reader, batchdispenser, target
 # here you can set which steps should be executed. If a step has been executed in the past the result have been saved
 # and the step does not have to be executed again (if nothing has changed)
 TRAINFEATURES = True
-TESTFEATURES = False
+TESTFEATURES = True
 TRAIN = True
 TEST = True
 
