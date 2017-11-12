@@ -1,516 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2c96a8c9-344c-4e91-9330-6ba3e46ce4db" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0.tar.gz" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/COPYING.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/__main__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/config.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/consoleapp.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/alias.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/application.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/autocall.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/builtin_trap.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/compilerop.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/completer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/completerlib.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/crashhandler.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/debugger.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/display.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/display_trap.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/displayhook.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/displaypub.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/error.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/events.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/excolors.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/extensions.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/formatters.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/getipython.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/history.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/historyapp.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/hooks.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/inputsplitter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/inputtransformer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/interactiveshell.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/latex_symbols.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/logger.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/macro.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magic_arguments.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/auto.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/basic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/code.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/config.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/display.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/execution.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/extension.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/history.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/logging.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/namespace.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/osm.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/pylab.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/magics/script.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/oinspect.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/page.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/payload.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/payloadpage.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/prefilter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/profile/README_STARTUP" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/profileapp.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/profiledir.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/prompts.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/pylabtools.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/release.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/shadowns.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/shellapp.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/splitinput.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/2x2.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/2x2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/bad_all.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/daft_extension/daft_extension.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/nonascii.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/nonascii2.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/print_argv.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/refbug.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/simpleerr.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/tclass.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_alias.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_application.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_autocall.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_compilerop.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_completer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_completerlib.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_debugger.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_display.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_displayhook.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_events.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_extension.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_formatters.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_handlers.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_history.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_hooks.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_imports.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_inputsplitter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_inputtransformer.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_interactiveshell.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_iplib.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_logger.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_magic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_magic_arguments.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_magic_terminal.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_oinspect.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_page.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_paths.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_prefilter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_profile.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_prompts.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_pylabtools.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_run.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_shellapp.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_splitinput.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/tests/test_ultratb.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/ultratb.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/core/usage.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/display.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/extensions/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/extensions/autoreload.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/extensions/cythonmagic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/extensions/rmagic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/extensions/storemagic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/extensions/sympyprinting.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/extensions/tests/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/extensions/tests/test_autoreload.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/extensions/tests/test_storemagic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/external/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/external/decorators/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/external/decorators/_decorators.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/external/decorators/_numpy_testing_noseclasses.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/external/decorators/_numpy_testing_utils.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/external/mathjax.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/external/qt_for_kernel.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/external/qt_loaders.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/frontend.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/html.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/__main__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/adapter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/channels.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/channelsabc.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/client.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/clientabc.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/connect.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/kernelspec.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/kernelspecapp.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/launcher.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/manager.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/managerabc.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/multikernelmanager.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/restarter.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/kernel/threaded.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/backgroundjobs.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/clipboard.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/deepreload.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/demo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/display.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/editorhooks.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/guisupport.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/inputhook.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/inputhookglut.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/inputhookgtk.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/inputhookgtk3.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/inputhookpyglet.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/inputhookqt4.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/inputhookwx.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/kernel.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/latextools.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/lexers.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/pretty.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/security.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test.wav" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test_backgroundjobs.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test_clipboard.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test_deepreload.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test_display.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test_editorhooks.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test_imports.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test_latextools.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test_lexers.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test_pretty.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/lib/tests/test_security.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/nbconvert.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/nbformat.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/parallel.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/paths.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/qt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/sphinxext/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/sphinxext/custom_doctests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/sphinxext/ipython_console_highlighting.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/sphinxext/ipython_directive.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/console.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/debugger.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/embed.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/interactiveshell.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/ipapp.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/magics.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/prompts.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/pt_inputhooks/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/pt_inputhooks/glut.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/pt_inputhooks/gtk.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/pt_inputhooks/gtk3.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/pt_inputhooks/osx.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/pt_inputhooks/pyglet.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/pt_inputhooks/qt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/pt_inputhooks/tk.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/pt_inputhooks/wx.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/ptshell.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/ptutils.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/shortcuts.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/tests/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/tests/test_embed.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/tests/test_help.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/terminal/tests/test_interactivshell.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/__main__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/decorators.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/globalipapp.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/iptest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/iptestcontroller.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/ipunittest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/README.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/dtexample.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/ipdoctest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/iptest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/setup.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/show_refs.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/simple.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/simplevars.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/test_combo.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/test_example.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/test_exampleip.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/test_ipdoctest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/plugin/test_refs.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/skipdoctest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/tests/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/tests/test_decorators.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/tests/test_ipunittest.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/tests/test_tools.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/testing/tools.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/PyColorize.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/_get_terminal_size.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/_process_cli.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/_process_common.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/_process_posix.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/_process_win32.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/_process_win32_controller.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/_signatures.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/_sysinfo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/_tokenize_py2.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/_tokenize_py3.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/capture.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/colorable.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/coloransi.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/contexts.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/daemonize.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/data.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/decorators.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/dir2.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/encoding.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/eventful.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/frame.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/generics.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/importstring.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/io.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/ipstruct.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/jsonutil.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/localinterfaces.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/log.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/module_paths.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/openpy.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/path.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/pickleutil.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/process.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/py3compat.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/rlineimpl.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/sentinel.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/shimmodule.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/signatures.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/strdispatch.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/sysinfo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/syspathcontext.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tempdir.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/terminal.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_capture.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_decorators.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_dir2.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_imports.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_importstring.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_io.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_module_paths.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_openpy.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_path.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_process.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_pycolorize.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_shimmodule.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_sysinfo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_tempdir.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_text.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_tokenutil.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tests/test_wildcard.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/text.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/timing.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tokenize2.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tokenutil.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/traitlets.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/tz.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/ulinecache.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/version.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/warn.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/IPython/utils/wildcard.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/PKG-INFO" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/README.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/README.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/autogen_api.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/autogen_config.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/autogen_magics.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/autogen_shortcuts.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/make.cmd" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/man/ipython.1" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/requirements.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/2.0/running-crop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/2.0/running.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/2.0/treeview.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/2.0/user-interface.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/2.0/widgets.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_dashboard.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_dashboard_cluster.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_notebook_cythonmagic.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_notebook_long_out.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_notebook_octavemagic.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_notebook_rmagic.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_notebook_script_cells.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_notebook_spectrogram.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_notebook_tooltip.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_par_tb.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_qtconsole_baboon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ipy_013_qtconsole_completer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/kernel_selector_screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ms_visual_studio.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/notebook_specgram.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/ptshell_features.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/qtconsole.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/qtconsole_tabbed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_images/unicode_completion.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_static/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_static/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/_templates/notebook_redirect.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/about/history.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/about/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/about/license_and_copyright.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/api/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/conf.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/callbacks.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/custommagics.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/details.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/eventloops.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/extensions/autoreload.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/extensions/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/extensions/storemagic.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/inputtransforms.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/integrating.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/intro.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/options/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/config/shortcuts/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/coredev/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/coredev/release_process.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/config.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/execution.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/figs/ipy_kernel_and_terminal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/figs/ipy_kernel_and_terminal.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/figs/other_kernels.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/figs/other_kernels.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/how_ipython_works.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/inputhook_app.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/kernels.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/lexer.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/messaging.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/parallel_connections.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/parallel_messages.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/pycompat.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/development/wrapperkernels.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/install/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/install/install.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/install/kernel_install.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/figs/besselj.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/figs/colors_dark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/figs/jn.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/figs/jn.xhtml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/magics.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/plotting.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/python-ipython-diff.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/reference.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/shell.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/tips.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/interactive/tutorial.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/links.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/overview.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/parallel/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/development.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/github-stats-0.11.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/github-stats-0.12.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/github-stats-0.13.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/github-stats-1.0.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/github-stats-2.0.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/github-stats-3.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/github-stats-4.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/github-stats-5.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/index.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/pr/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/pr/antigravity-feature.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/pr/incompat-switching-to-perl.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/pr/progressbar.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version0.10.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version0.11.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version0.12.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version0.13.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version0.8.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version0.9.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version1.0.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version2.0.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version3.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version3_widget_migration.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version4.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/source/whatsnew/version5.rst" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/sphinxext/apigen.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/sphinxext/github.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/docs/sphinxext/magics.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/Embedding/Index.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/Embedding/embed_class_long.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/Embedding/embed_class_short.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/Embedding/embed_function.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Animations Using clear_output.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Background Jobs.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Beyond Plain Python.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Capturing Output.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Cell Magics.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Custom Display Logic.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Importing Notebooks.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Index.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Plotting in the Notebook.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Raw Input in the Notebook.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Rich Output.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Script Magics.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/SymPy.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Terminal Usage.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Third Party Rich Output.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Trapezoid Rule.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Updating Displays.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/Working With External Code.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/data/flare.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/example-demo.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/gui/gui-glut.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/gui/gui-gtk.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/gui/gui-gtk3.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/gui/gui-pyglet.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/gui/gui-qt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/gui/gui-tk.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/gui/gui-wx.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/ipython-completion.bash" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/ipython-get-history.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/ipython.desktop" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/nbpackage/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/nbpackage/mynotebook.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/nbpackage/nbs/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/IPython Kernel/nbpackage/nbs/other.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/Index.ipynb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/images/FrontendKernel.graffle/data.plist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/images/FrontendKernel.graffle/image1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/images/FrontendKernel.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/images/animation.m4v" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/images/ipython_logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/images/python_logo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/utils/cwd_prompt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/utils/list_pyfiles.ipy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/examples/utils/list_subdirs.ipy" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/scripts/ipython.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/scripts/ipython_nb.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/scripts/ipython_win_post_install.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/setup.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/setupbase.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/setupegg.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/setupext/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ipython-5.5.0/setupext/install_data_ext.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/config_AURORA4.cfg" afterPath="$PROJECT_DIR$/config/config_AURORA4.cfg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/kaldi/decode.sh" afterPath="$PROJECT_DIR$/kaldi/decode.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_TIMIT.py" afterPath="$PROJECT_DIR$/main_TIMIT.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuralnetworks/beam_search_speller.py" afterPath="$PROJECT_DIR$/neuralnetworks/beam_search_speller.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuralnetworks/decoder.py" afterPath="$PROJECT_DIR$/neuralnetworks/decoder.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/neuralnetworks/trainer.py" afterPath="$PROJECT_DIR$/neuralnetworks/trainer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/processing/ark.py" afterPath="$PROJECT_DIR$/processing/ark.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/processing/feature_reader.py" afterPath="$PROJECT_DIR$/processing/feature_reader.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/processing/prepare_data.py" afterPath="$PROJECT_DIR$/processing/prepare_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/processing/readfiles.py" afterPath="$PROJECT_DIR$/processing/readfiles.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/processing/score.py" afterPath="$PROJECT_DIR$/processing/score.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/processing/target_normalizers.py" afterPath="$PROJECT_DIR$/processing/target_normalizers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/py_filter" afterPath="$PROJECT_DIR$/py_filter" />
-    </list>
+    <list default="true" id="2c96a8c9-344c-4e91-9330-6ba3e46ce4db" name="Default" comment="" />
     <ignored path="listen-attend-spell.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -529,7 +20,7 @@
     <favorites_list name="listen-attend-spell" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
       <file leaf-file-name="doxygen.cfg" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/doxygen.cfg">
           <provider selected="true" editor-type-id="text-editor">
@@ -581,7 +72,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -602,6 +92,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -609,6 +100,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2c96a8c9-344c-4e91-9330-6ba3e46ce4db" name="Default" comment="" />
@@ -624,22 +118,30 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24958678" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33110368" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -649,11 +151,18 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/duplicate.wav">
+    <entry file="file://$PROJECT_DIR$/doxygen.cfg">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/duplicate.wav">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -661,7 +170,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,7 +177,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -677,7 +184,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
